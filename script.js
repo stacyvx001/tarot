@@ -12,7 +12,7 @@ window.cards = [
     { name: "Nine of Cups", image: "cards/cups/nine_cups.jpeg", meanings: { general: "Желания сбываются" } },
     { name: "Ten of Cups", image: "cards/cups/ten_cups.jpeg", meanings: { general: "Семейное счастье" } },
     { name: "Page of Cups", image: "cards/cups/page_cups.jpeg", meanings: { general: "Новое сообщение, вдохновение" } },
-    { name: "Knight of Cups", image: "cards/cups/knight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
+    { name: "Knight of Cups", image: "cards/cups/khight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
     { name: "Queen of Cups", image: "cards/cups/queen_cups.jpeg", meanings: { general: "Эмоциональная поддержка" } },
     { name: "King of Cups", image: "cards/cups/king_cups.jpeg", meanings: { general: "Мудрый и добрый лидер" } },
 
