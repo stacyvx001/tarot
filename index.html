@@ -3,20 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Карты Таро</title>
+<title>Гончарное Таро</title>
 <style>
     body {
         margin: 0;
         padding: 0;
         min-height: 100vh;
         background: #e6e6fa; /* нежно-лавандовый фон */
-        position: relative;
-        overflow: hidden;
         font-family: sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Фоновый слой для звёзд и полумесяцев */
+    #backgroundLayer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none; /* чтобы клики проходили сквозь фон */
     }
 
     .star {
@@ -72,6 +83,8 @@
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        z-index: 10;
+        position: relative;
     }
 
     .card {
@@ -88,13 +101,20 @@
 </head>
 <body>
 
+<h1 style="z-index:10; position: relative;">Гончарное Таро</h1>
+
 <button id="dayCardBtn">Карта дня</button>
 <button id="threeCardsBtn">Расклад на 3 карты</button>
 <button id="fiveCardsBtn">Расклад на 5 карт</button>
 
 <div class="cards-container" id="cardsContainer"></div>
 
+<!-- Фоновый слой -->
+<div id="backgroundLayer"></div>
+
 <script>
+    const background = document.getElementById('backgroundLayer');
+
     // Создание случайных звёзд
     for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
@@ -104,7 +124,7 @@
         const size = Math.random() * 3 + 1;
         star.style.width = star.style.height = size + 'px';
         star.style.animationDuration = 1 + Math.random() * 3 + 's';
-        document.body.appendChild(star);
+        background.appendChild(star);
     }
 
     // Создание случайных полумесяцев
@@ -117,7 +137,7 @@
         moon.style.width = moon.style.height = 20 * scale + 'px';
         moon.style.boxShadow = `-${8 * scale}px 0 #e6e6fa`;
         moon.style.animationDuration = 3 + Math.random() * 2 + 's';
-        document.body.appendChild(moon);
+        background.appendChild(moon);
     }
 
     // Пример колоды с весёлыми описаниями
