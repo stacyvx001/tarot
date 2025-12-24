@@ -123,6 +123,59 @@ window.showCards = function(cardsArr) {
     });
 }
 
+// ===== Падающие звёзды на фоне =====
+const magicBg = document.getElementById('magic-bg');
+for(let i=0; i<30; i++){
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.animationDuration = (3 + Math.random()*3) + 's';
+    star.innerText = Math.random() < 0.5 ? '★' : '🌙';
+    magicBg.appendChild(star);
+}
+
+// ===== Функции для раскладов =====
+function getRandomCard() {
+    return window.cards[Math.floor(Math.random() * window.cards.length)];
+}
+
+function getRandomCards(count) {
+    const shuffled = [...window.cards].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+function drawCard() {
+    const card = getRandomCard();
+    showCards([card]);
+}
+
+function spread(count) {
+    const cards = getRandomCards(count);
+    showCards(cards);
+}
+
+function showCards(cards) {
+    const result = document.getElementById('result');
+    result.innerHTML = '';
+
+    cards.forEach(card => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+
+        const img = document.createElement('img');
+        img.src = card.image;
+        img.alt = card.name;
+
+        const text = document.createElement('div');
+        text.className = 'card-text';
+        text.innerHTML = `<strong>${card.name}</strong><br>${card.meanings.general}`;
+
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(text);
+        result.appendChild(cardDiv);
+    });
+}
+
 // ===== Функции для кнопок =====
 window.drawCard = function() {
     const card = getRandomCard();
