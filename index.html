@@ -53,17 +53,7 @@ body {
     font-size: 14px;
     line-height: 1.3;
 }
-
-/* Звёзды и полумесяц на карте */
-.card::before {
-    content: "★ 🌙 ✨";
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-    color: #ffb3ff;
-}
-
+    
 /* Анимация падающих звёзд на фоне */
 @keyframes twinkle {
     0% {opacity:0.5; transform: translateY(0) scale(1);}
@@ -92,6 +82,7 @@ body {
         overflow: hidden;
         position: relative;
     }
+
 
     /* Падающие мерцающие звёзды */
     .star {
@@ -215,6 +206,28 @@ function createStars(count = 100) {
 // Создаём падающие звёзды
 createStars();
 </script>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магическое Таро</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фон с падающими звёздами -->
+    <div id="magic-bg"></div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <button onclick="drawCard()">Карта дня</button>
+        <button onclick="spread(3)">Расклад на 3 карты</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="cards.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
