@@ -1,86 +1,82 @@
-/* === Общий стиль === */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f8e6f0, #e6e0f8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(to bottom, #f8e8f8, #f0dfff);
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
     text-align: center;
-    z-index: 10;
-    position: relative;
+    padding: 20px;
 }
 
 h1 {
-    color: #7b3f91;
+    color: #a85cae;
     margin-bottom: 20px;
 }
 
-/* === Кнопки === */
-.button-container {
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 10;
-}
-
-button {
-    background-color: #f4c2f8;
-    border: none;
+.buttons button {
     padding: 10px 20px;
     margin: 5px;
-    border-radius: 12px;
-    cursor: pointer;
+    border: none;
+    background: #e7bff3;
+    color: white;
     font-size: 16px;
-    transition: 0.3s;
-    position: relative;
-    z-index: 10;
-}
-
-button:hover {
-    background-color: #e6a8f0;
-}
-
-/* === Карты === */
-.cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    z-index: 1;
-    position: relative;
-}
-
-.cards-container img {
-    width: 120px;
-    height: 200px;
+    cursor: pointer;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-/* === Информация о карте === */
-.card-info {
-    color: #5a2e6f;
-    font-size: 14px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+.buttons button:hover {
+    background: #d594e0;
 }
 
-/* === Анимация звезд === */
-.star-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff0f8;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card img {
     width: 100%;
-    height: 100%;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Падающие звёзды */
+#stars-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px; height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px); opacity:1;}
+    100% { transform: translateY(100vh); opacity:0;}
 }
 
 
