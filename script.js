@@ -168,7 +168,12 @@ function showCards(cards) {
 
         const text = document.createElement('div');
         text.className = 'card-text';
-        text.innerHTML = `<strong>${card.name}</strong><br>${card.meanings.general}`;
+        text.innerHTML = `
+  <strong>${card.name}</strong><br>
+  ${card.meanings.general}<br>
+  <span class="card-comment">${card.comment || ''}</span>
+`;
+
 
         cardDiv.appendChild(img);
         cardDiv.appendChild(text);
