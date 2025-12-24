@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarot для Подруг</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Таро ✨</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Колода Таро для Подруг</h1>
-        <p>Выбирай карты и читай их значения!</p>
-    </header>
 
-    <main>
-        <section id="draw-section">
-            <button id="draw-card-btn">Вытянуть 1 карту</button>
-            <button id="draw-three-btn">Вытянуть 3 карты</button>
-        </section>
+  <h1>✨ Таро ✨</h1>
 
-        <section id="cards-display">
-            <!-- Карты будут отображаться здесь -->
-        </section>
-    </main>
+  <div class="buttons">
+    <button onclick="drawCardOfTheDay()">Карта дня</button>
+    <button onclick="drawThreeCards()">Три карты</button>
+  </div>
 
-    <script src="cards.js"></script>
-    <script src="script.js"></script>
+  <div id="card-container"></div>
+
+  <!-- JS (ВАЖНО: внизу!) -->
+  <script src="cards.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
+
