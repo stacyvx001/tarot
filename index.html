@@ -2,27 +2,145 @@ alert("JS подключён!");
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Таро ✨</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Таро Онлайн ✨</title>
+<style>
+    /* Фон */
+    body {
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #f9f0ff, #dcb3ff);
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    /* Падающие мерцающие звёзды */
+    .star {
+        position: absolute;
+        border-radius: 50%;
+        background: white;
+        opacity: 0.8;
+        animation: fall linear infinite, twinkle 1.5s infinite alternate;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-10px) translateX(0); opacity: 1; }
+        100% { transform: translateY(100vh) translateX(30px); opacity: 0; }
+    }
+
+    @keyframes twinkle {
+        from { opacity: 0.3; }
+        to { opacity: 1; }
+    }
+
+    h1 {
+        color: #a55eea;
+        margin-bottom: 20px;
+        text-shadow: 0 0 8px #fff;
+    }
+
+    button {
+        background-color: #dcb3ff;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #c084fc;
+        color: #fff;
+    }
+
+    #result {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(165,94,234,0.5);
+        padding: 10px;
+        width: 150px;
+        transform: scale(0) translateY(-20px);
+        opacity: 0;
+        animation: popIn 0.5s forwards;
+        transition: transform 0.3s;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 5px;
+        transition: transform 0.3s;
+    }
+
+    .card:hover img {
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+    .card:hover {
+        box-shadow: 0 0 25px rgba(165,94,234,0.8);
+        transform: scale(1.05) translateY(-5px);
+    }
+
+    .card-text {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    @keyframes popIn {
+        to {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
 </head>
 <body>
+<h1>Таро Онлайн ✨</h1>
 
-  <h1>✨ Таро ✨</h1>
+<!-- Кнопки для раскладов -->
+<button onclick="drawCard()">Карта дня</button>
+<button onclick="spread(3)">Расклад на 3 карты</button>
+<button onclick="spread(5)">Расклад на 5 карт</button>
 
-  <div class="buttons">
-    <button onclick="drawCardOfTheDay()">Карта дня</button>
-    <button onclick="drawThreeCards()">Три карты</button>
-  </div>
+<!-- Блок для карт -->
+<div id="result"></div>
 
-  <div id="card-container"></div>
+<!-- Скрипт с картами -->
+<script src="script.js"></script>
 
-  <!-- JS (ВАЖНО: внизу!) -->
-  <script src="cards.js"></script>
-  <script src="script.js"></script>
+<!-- Скрипт для падающих звёзд -->
+<script>
+function createStars(count = 100) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * window.innerWidth + 'px';
+        star.style.top = Math.random() * window.innerHeight + 'px';
+        const size = 1 + Math.random() * 3;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.animationDuration = 2 + Math.random() * 3 + 's';
+        document.body.appendChild(star);
+    }
+}
 
+// Создаём падающие звёзды
+createStars();
+</script>
 </body>
 </html>
+
 
