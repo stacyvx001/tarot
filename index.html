@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Tarot for Girls ✨</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot для Подруг</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>✨ Tarot for Girls ✨</h1>
-    <p class="subtitle">Загадай ситуацию и доверься картам</p>
+    <header>
+        <h1>Колода Таро для Подруг</h1>
+        <p>Выбирай карты и читай их значения!</p>
+    </header>
 
-    <button onclick="drawCard()">🔮 Карта дня</button>
-    <button onclick="spread(3)">🌙 Расклад на 3 карты</button>
-    <button onclick="spread(5)">🌙 Расклад на 5 карт</button>
+    <main>
+        <section id="draw-section">
+            <button id="draw-card-btn">Вытянуть 1 карту</button>
+            <button id="draw-three-btn">Вытянуть 3 карты</button>
+        </section>
 
-    <div id="result"></div>
-  </div>
+        <section id="cards-display">
+            <!-- Карты будут отображаться здесь -->
+        </section>
+    </main>
 
-  <script src="cards.js"></script>
-  <script src="app.js"></script>
+    <script src="cards.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
