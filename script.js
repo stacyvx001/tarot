@@ -1,6 +1,6 @@
-// ===== Полный массив карт Таро =====
+// ===== Полный массив карт Таро в правильном порядке =====
 window.cards = [
-    // Кубки
+    // ===== Кубки =====
     { name: "Ace of Cups", image: "cards/cups/ace_cups.jpeg", meanings: { general: "Новый эмоциональный старт" } },
     { name: "Two of Cups", image: "cards/cups/two_cups.jpeg", meanings: { general: "Партнёрство, гармония" } },
     { name: "Three of Cups", image: "cards/cups/three_cups.jpeg", meanings: { general: "Праздник, друзья" } },
@@ -12,11 +12,27 @@ window.cards = [
     { name: "Nine of Cups", image: "cards/cups/nine_cups.jpeg", meanings: { general: "Желания сбываются" } },
     { name: "Ten of Cups", image: "cards/cups/ten_cups.jpeg", meanings: { general: "Семейное счастье" } },
     { name: "Page of Cups", image: "cards/cups/page_cups.jpeg", meanings: { general: "Новое сообщение, вдохновение" } },
-    { name: "Knight of Cups", image: "cards/cups/khight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
+    { name: "Knight of Cups", image: "cards/cups/knight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
     { name: "Queen of Cups", image: "cards/cups/queen_cups.jpeg", meanings: { general: "Эмоциональная поддержка" } },
     { name: "King of Cups", image: "cards/cups/king_cups.jpeg", meanings: { general: "Мудрый и добрый лидер" } },
 
-    // Мечи
+    // ===== Пентакли =====
+    { name: "Ace of Pentacles", image: "cards/pentacles/ace_pentacles.jpeg", meanings: { general: "Новые возможности, богатство" } },
+    { name: "Two of Pentacles", image: "cards/pentacles/two_pentacles.jpeg", meanings: { general: "Баланс, адаптация" } },
+    { name: "Three of Pentacles", image: "cards/pentacles/three_pentacles.jpeg", meanings: { general: "Сотрудничество, обучение" } },
+    { name: "Four of Pentacles", image: "cards/pentacles/four_pentacles.jpeg", meanings: { general: "Сбережения, удержание" } },
+    { name: "Five of Pentacles", image: "cards/pentacles/five_pentacles.jpeg", meanings: { general: "Потери, трудности" } },
+    { name: "Six of Pentacles", image: "cards/pentacles/six_pentacles.jpeg", meanings: { general: "Помощь, щедрость" } },
+    { name: "Seven of Pentacles", image: "cards/pentacles/seven_pentacles.jpeg", meanings: { general: "Оценка, терпение" } },
+    { name: "Eight of Pentacles", image: "cards/pentacles/eight_pentacles.jpeg", meanings: { general: "Навыки, работа" } },
+    { name: "Nine of Pentacles", image: "cards/pentacles/nine_pentacles.jpeg", meanings: { general: "Успех, самодостаточность" } },
+    { name: "Ten of Pentacles", image: "cards/pentacles/ten_pentacles.jpeg", meanings: { general: "Богатство, стабильность" } },
+    { name: "Page of Pentacles", image: "cards/pentacles/page_pentacles.jpeg", meanings: { general: "Учение, новое начало" } },
+    { name: "Knight of Pentacles", image: "cards/pentacles/knight_pentacles.jpeg", meanings: { general: "Ответственность, стабильность" } },
+    { name: "Queen of Pentacles", image: "cards/pentacles/queen_pentacles.jpeg", meanings: { general: "Забота, комфорт" } },
+    { name: "King of Pentacles", image: "cards/pentacles/king_pentacles.jpeg", meanings: { general: "Материальный успех" } },
+
+    // ===== Мечи =====
     { name: "Ace of Swords", image: "cards/swords/ace_swords.jpeg", meanings: { general: "Новая идея, ясность" } },
     { name: "Two of Swords", image: "cards/swords/two_swords.jpeg", meanings: { general: "Выбор, сомнения" } },
     { name: "Three of Swords", image: "cards/swords/three_swords.jpeg", meanings: { general: "Разочарование, боль" } },
@@ -32,7 +48,7 @@ window.cards = [
     { name: "Queen of Swords", image: "cards/swords/queen_swords.jpeg", meanings: { general: "Интеллект, честность" } },
     { name: "King of Swords", image: "cards/swords/king_swords.jpeg", meanings: { general: "Логика, авторитет" } },
 
-    // Жезлы
+    // ===== Жезлы =====
     { name: "Ace of Wands", image: "cards/wands/ace_wands.jpeg", meanings: { general: "Новые начинания, энергия" } },
     { name: "Two of Wands", image: "cards/wands/two_wands.jpeg", meanings: { general: "Планирование, перспектива" } },
     { name: "Three of Wands", image: "cards/wands/three_wands.jpeg", meanings: { general: "Расширение, рост" } },
@@ -47,22 +63,6 @@ window.cards = [
     { name: "Knight of Wands", image: "cards/wands/knight_wands.jpeg", meanings: { general: "Стремление, авантюра" } },
     { name: "Queen of Wands", image: "cards/wands/queen_wands.jpeg", meanings: { general: "Смелость, харизма" } },
     { name: "King of Wands", image: "cards/wands/king_wands.jpeg", meanings: { general: "Лидерство, страсть" } },
-
-    // Пентакли
-    { name: "Ace of Pentacles", image: "cards/pentacles/ace_pentacles.jpeg", meanings: { general: "Новые возможности, богатство" } },
-    { name: "Two of Pentacles", image: "cards/pentacles/two_pentacles.jpeg", meanings: { general: "Баланс, адаптация" } },
-    { name: "Three of Pentacles", image: "cards/pentacles/three_pentacles.jpeg", meanings: { general: "Сотрудничество, обучение" } },
-    { name: "Four of Pentacles", image: "cards/pentacles/four_pentacles.jpeg", meanings: { general: "Сбережения, удержание" } },
-    { name: "Five of Pentacles", image: "cards/pentacles/five_pentacles.jpeg", meanings: { general: "Потери, трудности" } },
-    { name: "Six of Pentacles", image: "cards/pentacles/six_pentacles.jpeg", meanings: { general: "Помощь, щедрость" } },
-    { name: "Seven of Pentacles", image: "cards/pentacles/seven_pentacles.jpeg", meanings: { general: "Оценка, терпение" } },
-    { name: "Eight of Pentacles", image: "cards/pentacles/eight_pentacles.jpeg", meanings: { general: "Навыки, работа" } },
-    { name: "Nine of Pentacles", image: "cards/pentacles/nine_pentacles.jpeg", meanings: { general: "Успех, самодостаточность" } },
-    { name: "Ten of Pentacles", image: "cards/pentacles/ten_pentacles.jpeg", meanings: { general: "Богатство, стабильность" } },
-    { name: "Page of Pentacles", image: "cards/pentacles/page_pentacles.jpeg", meanings: { general: "Учение, новое начало" } },
-    { name: "Knight of Pentacles", image: "cards/pentacles/knight_pentacles.jpeg", meanings: { general: "Ответственность, стабильность" } },
-    { name: "Queen of Pentacles", image: "cards/pentacles/queen_pentacles.jpeg", meanings: { general: "Забота, комфорт" } },
-    { name: "King of Pentacles", image: "cards/pentacles/king_pentacles.jpeg", meanings: { general: "Материальный успех" } },
 
     // ===== Старшие арканы =====
     { name: "Fool", image: "cards/major/fool.jpeg", meanings: { general: "Начало пути, спонтанность" } },
@@ -88,73 +88,72 @@ window.cards = [
     { name: "Judgement", image: "cards/major/judgement.jpeg", meanings: { general: "Пробуждение, осознание" } },
     { name: "World", image: "cards/major/world.jpeg", meanings: { general: "Завершение, успех" } }
 ];
-// ================================
-//  ЕДИНСТВЕННЫЙ ИСТОЧНИК КАРТ
-// ================================
-const minorCards = window.cards.filter(c => c.arcana === 'minor');
-const majorCards = window.cards.filter(c => c.arcana === 'major');
 
-// ================================
-//  СЛУЧАЙНАЯ КАРТА (старшие реже)
-// ================================
+// ===== Используем единый массив для выбора карт =====
+const allCards = window.cards;
+
+// ===== Функции случайного выбора =====
 function getRandomCard() {
-  const roll = Math.random();
-
-  // 80% — младшие, 20% — старшие
-  if (roll < 0.8) {
-    return minorCards[Math.floor(Math.random() * minorCards.length)];
-  } else {
-    return majorCards[Math.floor(Math.random() * majorCards.length)];
-  }
+    const index = Math.floor(Math.random() * allCards.length);
+    return allCards[index];
 }
 
 function getRandomCards(count) {
-  const result = [];
-  for (let i = 0; i < count; i++) {
-    result.push(getRandomCard());
-  }
-  return result;
+    const shuffled = [...allCards].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
 }
 
-// ================================
-//  ВЫВОД КАРТ
-// ================================
+// ===== Функция отображения карт =====
 function showCards(cards) {
-  const result = document.getElementById('result');
-  result.innerHTML = '';
+    const result = document.getElementById('result');
+    result.innerHTML = '';
 
-  cards.forEach(card => {
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'card';
+    cards.forEach(card => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
 
-    const img = document.createElement('img');
-    img.src = card.image;
-    img.alt = card.name;
+        const img = document.createElement('img');
+        img.src = card.image;
+        img.alt = card.name;
 
-    const text = document.createElement('div');
-    text.className = 'card-text';
-    text.innerHTML = `
-      <strong>${card.name}</strong><br>
-      ${card.comment || ''}<br><br>
-      <em>Общее:</em> ${card.meanings.general}<br>
-      <em>Любовь:</em> ${card.meanings.love}<br>
-      <em>Работа:</em> ${card.meanings.work}<br>
-      <em>Да/Нет:</em> ${card.meanings.yesno}
-    `;
+        const text = document.createElement('div');
+        text.className = 'card-text';
+        text.innerHTML = `
+            <strong>${card.name}</strong><br>
+            ${card.comment || ''}<br><br>
+            <em>Общее:</em> ${card.meanings.general || ''}<br>
+            <em>Любовь:</em> ${card.meanings.love || ''}<br>
+            <em>Работа:</em> ${card.meanings.work || ''}<br>
+            <em>Да/Нет:</em> ${card.meanings.yesno || ''}
+        `;
 
-    cardDiv.appendChild(img);
-    cardDiv.appendChild(text);
-    result.appendChild(cardDiv);
-  });
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(text);
+        result.appendChild(cardDiv);
+    });
 }
 
-// ================================
-//  КНОПКИ (ТОЛЬКО ТАК)
-// ================================
-window.drawCard = function () {
-  showCards([getRandomCard()]);
-};
+// ===== Кнопки =====
+window.drawCard = function() {
+    showCards([getRandomCard()]);
+}
 
-window.spread = function (count) {
-  showCards(getRandomCards(count));
-};
+window.spread = function(count) {
+    showCards(getRandomCards(count));
+}
+
+document.getElementById('drawCardBtn').addEventListener('click', () => drawCard());
+document.getElementById('spreadThreeBtn').addEventListener('click', () => spread(3));
+document.getElementById('spreadFiveBtn').addEventListener('click', () => spread(5));
+
+// ===== Падающие звёзды на фоне =====
+const magicBg = document.getElementById('magic-bg');
+for(let i = 0; i < 30; i++){
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.animationDuration = (3 + Math.random() * 3) + 's';
+    star.innerText = Math.random() < 0.5 ? '★' : '🌙';
+    magicBg.appendChild(star);
+}
+
