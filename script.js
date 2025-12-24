@@ -1,5 +1,5 @@
-// ===== Полный массив карт Таро в правильном порядке =====
-window.cards = [
+// ===== Полный массив карт Таро =====
+const allCards = [
     // ===== Кубки =====
     { name: "Ace of Cups", image: "cards/cups/ace_cups.jpeg", meanings: { general: "Новый эмоциональный старт" } },
     { name: "Two of Cups", image: "cards/cups/two_cups.jpeg", meanings: { general: "Партнёрство, гармония" } },
@@ -12,7 +12,7 @@ window.cards = [
     { name: "Nine of Cups", image: "cards/cups/nine_cups.jpeg", meanings: { general: "Желания сбываются" } },
     { name: "Ten of Cups", image: "cards/cups/ten_cups.jpeg", meanings: { general: "Семейное счастье" } },
     { name: "Page of Cups", image: "cards/cups/page_cups.jpeg", meanings: { general: "Новое сообщение, вдохновение" } },
-    { name: "Knight of Cups", image: "cards/cups/knight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
+    { name: "Knight of Cups", image: "cards/cups/khight_cups.jpeg", meanings: { general: "Романтика, предложение" } },
     { name: "Queen of Cups", image: "cards/cups/queen_cups.jpeg", meanings: { general: "Эмоциональная поддержка" } },
     { name: "King of Cups", image: "cards/cups/king_cups.jpeg", meanings: { general: "Мудрый и добрый лидер" } },
 
@@ -88,72 +88,3 @@ window.cards = [
     { name: "Judgement", image: "cards/major/judgement.jpeg", meanings: { general: "Пробуждение, осознание" } },
     { name: "World", image: "cards/major/world.jpeg", meanings: { general: "Завершение, успех" } }
 ];
-
-// ===== Используем единый массив для выбора карт =====
-const allCards = window.cards;
-
-// ===== Функции случайного выбора =====
-function getRandomCard() {
-    const index = Math.floor(Math.random() * allCards.length);
-    return allCards[index];
-}
-
-function getRandomCards(count) {
-    const shuffled = [...allCards].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-}
-
-// ===== Функция отображения карт =====
-function showCards(cards) {
-    const result = document.getElementById('result');
-    result.innerHTML = '';
-
-    cards.forEach(card => {
-        const cardDiv = document.createElement('div');
-        cardDiv.className = 'card';
-
-        const img = document.createElement('img');
-        img.src = card.image;
-        img.alt = card.name;
-
-        const text = document.createElement('div');
-        text.className = 'card-text';
-        text.innerHTML = `
-            <strong>${card.name}</strong><br>
-            ${card.comment || ''}<br><br>
-            <em>Общее:</em> ${card.meanings.general || ''}<br>
-            <em>Любовь:</em> ${card.meanings.love || ''}<br>
-            <em>Работа:</em> ${card.meanings.work || ''}<br>
-            <em>Да/Нет:</em> ${card.meanings.yesno || ''}
-        `;
-
-        cardDiv.appendChild(img);
-        cardDiv.appendChild(text);
-        result.appendChild(cardDiv);
-    });
-}
-
-// ===== Кнопки =====
-window.drawCard = function() {
-    showCards([getRandomCard()]);
-}
-
-window.spread = function(count) {
-    showCards(getRandomCards(count));
-}
-
-document.getElementById('drawCardBtn').addEventListener('click', () => drawCard());
-document.getElementById('spreadThreeBtn').addEventListener('click', () => spread(3));
-document.getElementById('spreadFiveBtn').addEventListener('click', () => spread(5));
-
-// ===== Падающие звёзды на фоне =====
-const magicBg = document.getElementById('magic-bg');
-for(let i = 0; i < 30; i++){
-    const star = document.createElement('div');
-    star.className = 'star';
-    star.style.left = Math.random() * window.innerWidth + 'px';
-    star.style.animationDuration = (3 + Math.random() * 3) + 's';
-    star.innerText = Math.random() < 0.5 ? '★' : '🌙';
-    magicBg.appendChild(star);
-}
-
