@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #f3e8ff; /* нежный лавандовый фон */
+    background-color: #f3e8ff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,102 +80,33 @@ button:hover {
 <div class="cards-container" id="cardsContainer"></div>
 
 <script>
-// Колода карт
-const deck = [
-    {
-        name: "Шут",
-        img: "cards/fool.jpeg",
-        base: "Новые начинания, спонтанность, приключения.",
-        career: "Начало нового проекта, рискованные идеи.",
-        love: "Новые знакомства, лёгкая флирт-ситуация.",
-        yesno: "Да, но с осторожностью."
-    },
-    {
-        name: "Маг",
-        img: "cards/heirophant.jpeg",
-        base: "Реализация потенциала, энергия, уверенность.",
-        career: "Прояви свои навыки — успех обеспечен.",
-        love: "Инициатива в отношениях принесёт пользу.",
-        yesno: "Да, возможности благоприятны."
-    },
-    {
-        name: "Верховная Жрица",
-        img: "cards/high_priestess.jpeg",
-        base: "Интуиция, тайны, внутренний мир.",
-        career: "Слушай интуицию, возможны скрытые возможности.",
-        love: "Секреты или недосказанность в отношениях.",
-        yesno: "Неопределённо, наблюдай."
-    },
-    {
-        name: "Императрица",
-        img: "cards/empress.jpeg",
-        base: "Творчество, забота, изобилие.",
-        career: "Реализуй креативные идеи, будет поддержка.",
-        love: "Любовь, забота и гармония.",
-        yesno: "Да, благоприятный период."
-    },
-    {
-        name: "Император",
-        img: "cards/emperor.jpeg",
-        base: "Структура, контроль, стабильность.",
-        career: "Прими ответственность, планируй стратегически.",
-        love: "Надёжность в отношениях, порядок.",
-        yesno: "Да, стабильность возможна."
-    },
-    {
-        name: "Отшельник",
-        img: "cards/hermit.jpeg",
-        base: "Размышления, уединение, поиск знаний.",
-        career: "Время для анализа и подготовки.",
-        love: "Размышляй, прежде чем действовать.",
-        yesno: "Нет, пока не время."
-    },
-    {
-        name: "Колесо Фортуны",
-        img: "cards/wheel_of_fortune.jpeg",
-        base: "Перемены, судьба, неожиданные события.",
-        career: "Будь готов к изменениям, возможно продвижение.",
-        love: "Сюрпризы в отношениях.",
-        yesno: "Да, шанс высок."
-    }
-];
-
-// Советы девушек
-const girls = [
-    {name: "Женя", element: "Кубки", advice: "Следуй своим эмоциям, будь мягкой."},
-    {name: "Настя", element: "Пентакли", advice: "Думай о стабильности, сохраняй ресурсы."},
-    {name: "Маша", element: "Мечи", advice: "Будь решительной и ясной в мыслях."},
-    {name: "Дарина", element: "Жезлы", advice: "Проявляй инициативу и энтузиазм."},
-    {name: "Ника", element: "Старший Аркан", advice: "Смотри на картину целиком, не торопись."}
-];
+// ================================
+// СОБИРАЕМ ВСЕ КАРТЫ
+// ================================
+const tarotDeck = [...cardsCups, ...cardsPentacles, ...cardsSwords, ...cardsWands, ...cardsMajor];
 
 const container = document.getElementById('cardsContainer');
 
 function getRandomCards(count) {
-    const copy = [...deck];
-    const selected = [];
-    while (selected.length < count && copy.length > 0) {
-        const idx = Math.floor(Math.random() * copy.length);
-        selected.push(copy.splice(idx, 1)[0]);
-    }
-    return selected;
+    const shuffled = [...tarotDeck].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
 }
 
 function showCards(count) {
     container.innerHTML = '';
-    const selected = getRandomCards(count);
-    selected.forEach(card => {
-        const girl = girls[Math.floor(Math.random() * girls.length)];
+    const selectedCards = getRandomCards(count);
+
+    selectedCards.forEach(card => {
         const div = document.createElement('div');
         div.className = 'card';
         div.innerHTML = `
-            <img src="${card.img}" alt="${card.name}">
+            <img src="${card.image}" alt="${card.name}">
             <strong>${card.name}</strong>
-            <p><strong>Базовое значение:</strong> ${card.base}</p>
-            <p><strong>Карьера:</strong> ${card.career}</p>
-            <p><strong>Любовь:</strong> ${card.love}</p>
-            <p><strong>Да/Нет:</strong> ${card.yesno}</p>
-            <p><em>Совет от ${girl.name} (${girl.element}): ${girl.advice}</em></p>
+            <p><strong>Общее значение:</strong> ${card.meanings.general}</p>
+            <p><strong>Любовь:</strong> ${card.meanings.love}</p>
+            <p><strong>Работа:</strong> ${card.meanings.work}</p>
+            <p><strong>Да/Нет:</strong> ${card.meanings.yesno}</p>
+            <p><em>${card.comment}</em></p>
         `;
         container.appendChild(div);
     });
@@ -184,7 +115,6 @@ function showCards(count) {
 
 </body>
 </html>
-
 
 
 
