@@ -46,15 +46,50 @@ const tarotDeck = [
     // ================= ПЕНТАКЛИ (PENTACLES) - Настя =================
     { id: 36, name: "Туз Пентаклей", number: 1, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/ace_pentacles.jpg", meanings: { general: "Новые возможности, ресурсы, стабильность." }},
     { id: 37, name: "Двойка Пентаклей", number: 2, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/2_pentacles.jpg", meanings: { general: "Баланс, гибкость, управление делами." }},
-    // … остальные карты Пентаклей …
+    { id: 38, name: "Тройка Пентаклей", number: 3, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/3_pentacles.jpg", meanings: { general: "Командная работа, мастерство, обучение." }},
+    { id: 39, name: "Четвёрка Пентаклей", number: 4, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/4_pentacles.jpg", meanings: { general: "Стабильность, контроль, накопления." }},
+    { id: 40, name: "Пятёрка Пентаклей", number: 5, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/5_pentacles.jpg", meanings: { general: "Материальные трудности, поддержка." }},
+    { id: 41, name: "Шестёрка Пентаклей", number: 6, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/6_pentacles.jpg", meanings: { general: "Щедрость, помощь, равновесие." }},
+    { id: 42, name: "Семёрка Пентаклей", number: 7, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/7_pentacles.jpg", meanings: { general: "Оценка результатов, терпение." }},
+    { id: 43, name: "Восьмёрка Пентаклей", number: 8, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/8_pentacles.jpg", meanings: { general: "Усердие, практика, навыки." }},
+    { id: 44, name: "Девятка Пентаклей", number: 9, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/9_pentacles.jpg", meanings: { general: "Успех, самодостаточность, комфорт." }},
+    { id: 45, name: "Десятка Пентаклей", number: 10, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/10_pentacles.jpg", meanings: { general: "Материальное благополучие, семья." }},
+    { id: 46, name: "Паж Пентаклей", number: 11, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/page_pentacles.jpg", meanings: { general: "Учёба, новые знания, внимание к деталям." }},
+    { id: 47, name: "Рыцарь Пентаклей", number: 12, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/knight_pentacles.jpg", meanings: { general: "Ответственность, стабильность, методичность." }},
+    { id: 48, name: "Королева Пентаклей", number: 13, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/queen_pentacles.jpg", meanings: { general: "Забота, практичность, уют." }},
+    { id: 49, name: "Король Пентаклей", number: 14, arcana: "minor", suit: "pentacles", person: "Настя", image: "cards/pentacles/king_pentacles.jpg", meanings: { general: "Богатство, успех, лидерство." }},
 
     // ================= МЕЧИ (SWORDS) - Маша =================
     { id: 50, name: "Туз Мечей", number: 1, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/ace_swords.jpg", meanings: { general: "Новые идеи, ясность, решимость." }},
-    // … остальные карты Мечей …
+    { id: 51, name: "Двойка Мечей", number: 2, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/2_swords.jpg", meanings: { general: "Выбор, сомнения, компромисс." }},
+    { id: 52, name: "Тройка Мечей", number: 3, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/3_swords.jpg", meanings: { general: "Боль, разочарование, расставание." }},
+    { id: 53, name: "Четвёрка Мечей", number: 4, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/4_swords.jpg", meanings: { general: "Отдых, восстановление, пауза." }},
+    { id: 54, name: "Пятёрка Мечей", number: 5, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/5_swords.jpg", meanings: { general: "Конфликт, напряжение, уроки." }},
+    { id: 55, name: "Шестёрка Мечей", number: 6, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/6_swords.jpg", meanings: { general: "Переход, движение, путь." }},
+    { id: 56, name: "Семёрка Мечей", number: 7, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/7_swords.jpg", meanings: { general: "Хитрость, стратегия, обход правил." }},
+    { id: 57, name: "Восьмёрка Мечей", number: 8, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/8_swords.jpg", meanings: { general: "Ограничения, страх, замешательство." }},
+    { id: 58, name: "Девятка Мечей", number: 9, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/9_swords.jpg", meanings: { general: "Беспокойство, ночные страхи, стресс." }},
+    { id: 59, name: "Десятка Мечей", number: 10, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/10_swords.jpg", meanings: { general: "Кризис, конец цикла, разочарование." }},
+    { id: 60, name: "Паж Мечей", number: 11, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/page_swords.jpg", meanings: { general: "Любопытство, наблюдение, информация." }},
+    { id: 61, name: "Рыцарь Мечей", number: 12, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/knight_swords.jpg", meanings: { general: "Действие, скорость, решимость." }},
+    { id: 62, name: "Королева Мечей", number: 13, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/queen_swords.jpg", meanings: { general: "Интеллект, независимость, проницательность." }},
+    { id: 63, name: "Король Мечей", number: 14, arcana: "minor", suit: "swords", person: "Маша", image: "cards/swords/king_swords.jpg", meanings: { general: "Логика, стратегия, власть." }},
 
     // ================= ЖЕЗЛЫ (WANDS) - Дарина =================
     { id: 64, name: "Туз Жезлов", number: 1, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/ace_wands.jpg", meanings: { general: "Новые начинания, энергия, энтузиазм." }},
-    // … остальные карты Жезлов …
+    { id: 65, name: "Двойка Жезлов", number: 2, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/2_wands.jpg", meanings: { general: "Планирование, перспектива, стратегия." }},
+    { id: 66, name: "Тройка Жезлов", number: 3, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/3_wands.jpg", meanings: { general: "Действие, ожидание результатов, прогресс." }},
+    { id: 67, name: "Четвёрка Жезлов", number: 4, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/4_wands.jpg", meanings: { general: "Праздник, стабильность, домашний уют." }},
+    { id: 68, name: "Пятёрка Жезлов", number: 5, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/5_wands.jpg", meanings: { general: "Конфликты, конкуренция, борьба." }},
+    { id: 69, name: "Шестёрка Жезлов", number: 6, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/6_wands.jpg", meanings: { general: "Победа, признание, успех." }},
+    { id: 70, name: "Семёрка Жезлов", number: 7, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/7_wands.jpg", meanings: { general: "Отстаивание позиции, защита." }},
+    { id: 71, name: "Восьмёрка Жезлов", number: 8, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/8_wands.jpg", meanings: { general: "Быстрое движение, прогресс, новости." }},
+    { id: 72, name: "Девятка Жезлов", number: 9, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/9_wands.jpg", meanings: { general: "Выносливость, защита, осторожность." }},
+    { id: 73, name: "Десятка Жезлов", number: 10, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/10_wands.jpg", meanings: { general: "Нагрузка, ответственность, завершение цикла." }},
+    { id: 74, name: "Паж Жезлов", number: 11, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/page_wands.jpg", meanings: { general: "Интерес, исследования, новые возможности." }},
+    { id: 75, name: "Рыцарь Жезлов", number: 12, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/knight_wands.jpg", meanings: { general: "Энергия, приключения, движение." }},
+    { id: 76, name: "Королева Жезлов", number: 13, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/queen_wands.jpg", meanings: { general: "Харизма, уверенность, лидерство." }},
+    { id: 77, name: "Король Жезлов", number: 14, arcana: "minor", suit: "wands", person: "Дарина", image: "cards/wands/king_wands.jpg", meanings: { general: "Воля, стратегия, энергия." }},
 ];
 
 // ============================================
