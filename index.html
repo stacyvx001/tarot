@@ -6,6 +6,81 @@ alert("JS подключён!");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Таро Онлайн ✨</title>
 <style>
+    /* Фон сайта */
+body {
+    background: radial-gradient(circle at top, #fce4ff, #f5e6ff);
+    font-family: 'Arial', sans-serif;
+    color: #4a2c5a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Блок с картами */
+#result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Карта */
+.card {
+    position: relative;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.85);
+    padding: 10px;
+    width: 160px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px) rotate(-3deg);
+}
+
+/* Изображение карты */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Текст под картой */
+.card-text {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+/* Звёзды и полумесяц на карте */
+.card::before {
+    content: "★ 🌙 ✨";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    color: #ffb3ff;
+}
+
+/* Анимация падающих звёзд на фоне */
+@keyframes twinkle {
+    0% {opacity:0.5; transform: translateY(0) scale(1);}
+    50% {opacity:1; transform: translateY(2px) scale(1.2);}
+    100% {opacity:0.5; transform: translateY(0) scale(1);}
+}
+
+.card::after {
+    content: "✦";
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    font-size: 12px;
+    color: #ffe6ff;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+
     /* Фон */
     body {
         font-family: Arial, sans-serif;
