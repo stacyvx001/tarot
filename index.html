@@ -79,12 +79,12 @@ button:hover {
 <h1>Гончарное Таро</h1>
 
 <div>
-    <button onclick="showCards(1)">Карта дня</button>
-    <button onclick="showCards(3)">Расклад на 3 карты</button>
-    <button onclick="showCards(5)">Расклад на 5 карт</button>
+    <button id="drawCardBtn">Карта дня</button>
+<button id="spreadThreeBtn">Расклад на 3 карты</button>
+<button id="spreadFiveBtn">Расклад на 5 карт</button>
 </div>
 
-<div class="cards-container" id="cardsContainer"></div>
+<div id="result"></div>
 
 <script>
 // ================================
@@ -228,10 +228,9 @@ function showCards(count) {
     container.appendChild(div);
   });
 }
-</script>
-
+<script src="cards.js"></script>
+<script src="script.js"></script>
 </body>
-</html>
 
 
 
