@@ -94,31 +94,8 @@ window.cards = [
 
 // Получение одной случайной карты
 function getRandomCards(count) {
-    const majors = window.cards.filter(card =>
-        card.image.includes('/major/')
-    );
-
-    const minors = window.cards.filter(card =>
-        !card.image.includes('/major/')
-    );
-
-    const result = [];
-    const MAJOR_CHANCE = 0.2; // 20% шанс старшего аркана
-
-    while (result.length < count) {
-        const useMajor = Math.random() < MAJOR_CHANCE;
-        const source = useMajor ? majors : minors;
-
-        const card = source[Math.floor(Math.random() * source.length)];
-
-        if (!result.find(c => c.name === card.name)) {
-            result.push(card);
-        }
-    }
-
-    return result;
-}
-
+    const shuffled = [...window.cards].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
 }
 
 // Получение нескольких случайных карт
