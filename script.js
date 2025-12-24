@@ -1,3 +1,4 @@
+alert("JS подключен");
 // Карта дня
 const cardContainer = document.getElementById('card-container');
 const drawCardBtn = document.getElementById('draw-card-btn');
