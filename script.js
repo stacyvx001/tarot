@@ -70,7 +70,7 @@ window.cards = [
     { name: "High Priestess", image: "cards/major/high_priestess.jpeg", meanings: { general: "Интуиция, тайны" } },
     { name: "Empress", image: "cards/major/empress.jpeg", meanings: { general: "Изобилие, забота" } },
     { name: "Emperor", image: "cards/major/emperor.jpeg", meanings: { general: "Власть, структура" } },
-    { name: "Hierophant", image: "cards/major/hierophant.jpeg", meanings: { general: "Учитель, традиции" } },
+    { name: "Hierophant", image: "cards/major/heirophant.jpeg", meanings: { general: "Учитель, традиции" } },
     { name: "Lovers", image: "cards/major/lovers.jpeg", meanings: { general: "Выбор, любовь" } },
     { name: "Chariot", image: "cards/major/chariot.jpeg", meanings: { general: "Контроль, победа" } },
     { name: "Strength", image: "cards/major/strength.jpeg", meanings: { general: "Сила духа, смелость" } },
