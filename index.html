@@ -6,6 +6,13 @@
 <title>Гончарное Таро</title>
 <style>
 body {
+    position: relative; /* кнопки будут поверх фона */
+}
+
+.overlay { 
+    pointer-events: none; /* если есть какие-то блокирующие div'ы поверх контента */
+}
+
     margin: 0;
     font-family: sans-serif;
     background-color: #f3e8ff;
