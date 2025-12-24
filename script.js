@@ -64,30 +64,32 @@ window.cards = [
     { name: "Queen of Pentacles", image: "cards/pentacles/queen_pentacles.jpeg", meanings: { general: "Забота, комфорт" } },
     { name: "King of Pentacles", image: "cards/pentacles/king_pentacles.jpeg", meanings: { general: "Материальный успех" } },
 
-    // Старшие арканы (пример)
-    { name: "The Fool", image: "cards/major/the_fool.jpeg", meanings: { general: "Начало пути, спонтанность" } },
-    { name: "The Magician", image: "cards/major/the_magician.jpeg", meanings: { general: "Ресурсы, мастерство" } },
-    { name: "The High Priestess", image: "cards/major/the_high_priestess.jpeg", meanings: { general: "Интуиция, тайны" } },
-    { name: "The Empress", image: "cards/major/the_empress.jpeg", meanings: { general: "Изобилие, забота" } },
-    { name: "The Emperor", image: "cards/major/the_emperor.jpeg", meanings: { general: "Власть, структура" } },
-    { name: "The Hierophant", image: "cards/major/the_hierophant.jpeg", meanings: { general: "Учитель, традиции" } },
-    { name: "The Lovers", image: "cards/major/the_lovers.jpeg", meanings: { general: "Выбор, любовь" } },
-    { name: "The Chariot", image: "cards/major/the_chariot.jpeg", meanings: { general: "Контроль, победа" } },
+    // ===== Старшие арканы =====
+window.cardsMajor = [
+    { name: "Fool", image: "cards/major/fool.jpeg", meanings: { general: "Начало пути, спонтанность" } },
+    { name: "Magician", image: "cards/major/magician.jpeg", meanings: { general: "Ресурсы, мастерство" } },
+    { name: "High Priestess", image: "cards/major/high_priestess.jpeg", meanings: { general: "Интуиция, тайны" } },
+    { name: "Empress", image: "cards/major/empress.jpeg", meanings: { general: "Изобилие, забота" } },
+    { name: "Emperor", image: "cards/major/emperor.jpeg", meanings: { general: "Власть, структура" } },
+    { name: "Hierophant", image: "cards/major/hierophant.jpeg", meanings: { general: "Учитель, традиции" } },
+    { name: "Lovers", image: "cards/major/lovers.jpeg", meanings: { general: "Выбор, любовь" } },
+    { name: "Chariot", image: "cards/major/chariot.jpeg", meanings: { general: "Контроль, победа" } },
     { name: "Strength", image: "cards/major/strength.jpeg", meanings: { general: "Сила духа, смелость" } },
-    { name: "The Hermit", image: "cards/major/the_hermit.jpeg", meanings: { general: "Размышление, одиночество" } },
+    { name: "Hermit", image: "cards/major/hermit.jpeg", meanings: { general: "Размышление, одиночество" } },
     { name: "Wheel of Fortune", image: "cards/major/wheel_of_fortune.jpeg", meanings: { general: "Судьба, изменения" } },
     { name: "Justice", image: "cards/major/justice.jpeg", meanings: { general: "Справедливость, решение" } },
-    { name: "The Hanged Man", image: "cards/major/the_hanged_man.jpeg", meanings: { general: "Пауза, осознанность" } },
+    { name: "Hanged Man", image: "cards/major/hanged_man.jpeg", meanings: { general: "Пауза, осознанность" } },
     { name: "Death", image: "cards/major/death.jpeg", meanings: { general: "Конец, трансформация" } },
     { name: "Temperance", image: "cards/major/temperance.jpeg", meanings: { general: "Баланс, гармония" } },
-    { name: "The Devil", image: "cards/major/the_devil.jpeg", meanings: { general: "Привязанности, искушение" } },
-    { name: "The Tower", image: "cards/major/the_tower.jpeg", meanings: { general: "Внезапные изменения, кризис" } },
-    { name: "The Star", image: "cards/major/the_star.jpeg", meanings: { general: "Надежда, вдохновение" } },
-    { name: "The Moon", image: "cards/major/the_moon.jpeg", meanings: { general: "Интуиция, иллюзии" } },
-    { name: "The Sun", image: "cards/major/the_sun.jpeg", meanings: { general: "Успех, радость" } },
+    { name: "Devil", image: "cards/major/devil.jpeg", meanings: { general: "Привязанности, искушение" } },
+    { name: "Tower", image: "cards/major/tower.jpeg", meanings: { general: "Внезапные изменения, кризис" } },
+    { name: "Star", image: "cards/major/star.jpeg", meanings: { general: "Надежда, вдохновение" } },
+    { name: "Moon", image: "cards/major/moon.jpeg", meanings: { general: "Интуиция, иллюзии" } },
+    { name: "Sun", image: "cards/major/sun.jpeg", meanings: { general: "Успех, радость" } },
     { name: "Judgement", image: "cards/major/judgement.jpeg", meanings: { general: "Пробуждение, осознание" } },
-    { name: "The World", image: "cards/major/the_world.jpeg", meanings: { general: "Завершение, успех" } }
+    { name: "World", image: "cards/major/world.jpeg", meanings: { general: "Завершение, успех" } }
 ];
+
 
 // ===== Функции =====
 window.getRandomCard = function() {
