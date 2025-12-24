@@ -3,23 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Таро Онлайн</title>
-<link rel="stylesheet" href="style.css">
+<title>Карты Таро</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: #e6e6fa; /* нежно-лавандовый фон */
+        position: relative;
+        overflow: hidden;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+        0% { opacity: 0.2; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .moon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: -8px 0 0 #e6e6fa;
+        opacity: 0.8;
+        animation: float 4s infinite alternate;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        100% { transform: translateY(-10px) rotate(10deg); }
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #d8bff7;
+        color: #3a0ca3;
+        z-index: 10;
+        position: relative;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background-color: #c49aff;
+    }
+
+    .cards-container {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 120px;
+        min-height: 160px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        font-size: 14px;
+    }
+</style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Таро Онлайн</h1>
-  
-  <div class="buttons">
-    <button id="drawCardBtn">Карта дня</button>
-    <button id="spreadThreeBtn">Расклад на 3 карты</button>
-  </div>
-  
-  <div id="result" class="cards-container"></div>
-</div>
+<button id="dayCardBtn">Карта дня</button>
+<button id="threeCardsBtn">Расклад на 3 карты</button>
+<button id="fiveCardsBtn">Расклад на 5 карт</button>
 
-<script src="cards.js"></script>
-<script src="script.js"></script>
+<div class="cards-container" id="cardsContainer"></div>
+
+<script>
+    // Создание случайных звёзд
+    for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * window.innerHeight + 'px';
+        star.style.left = Math.random() * window.innerWidth + 'px';
+        const size = Math.random() * 3 + 1;
+        star.style.width = star.style.height = size + 'px';
+        star.style.animationDuration = 1 + Math.random() * 3 + 's';
+        document.body.appendChild(star);
+    }
+
+    // Создание случайных полумесяцев
+    for (let i = 0; i < 5; i++) {
+        const moon = document.createElement('div');
+        moon.classList.add('moon');
+        moon.style.top = Math.random() * window.innerHeight + 'px';
+        moon.style.left = Math.random() * window.innerWidth + 'px';
+        const scale = Math.random() * 1.5 + 0.5;
+        moon.style.width = moon.style.height = 20 * scale + 'px';
+        moon.style.boxShadow = `-${8 * scale}px 0 #e6e6fa`;
+        moon.style.animationDuration = 3 + Math.random() * 2 + 's';
+        document.body.appendChild(moon);
+    }
+
+    // Пример колоды с весёлыми описаниями
+    const deck = [
+        {name: "Шут", desc: "Сегодня забудь про правила, твори и улыбайся!"},
+        {name: "Маг", desc: "Время проявить свои суперспособности."},
+        {name: "Верховная Жрица", desc: "Слушай интуицию, она не подведёт."},
+        {name: "Императрица", desc: "Создавай красоту вокруг себя."},
+        {name: "Император", desc: "Сегодня день для решительных действий."},
+        {name: "Отшельник", desc: "Найди минутку для себя и своих мыслей."},
+        {name: "Колесо Фортуны", desc: "Сюрпризы близко, держи улыбку!"},
+        {name: "Сила", desc: "Ты сильнее, чем думаешь."},
+        {name: "Справедливость", desc: "Сегодня день баланса и честности."},
+        {name: "Повешенный", desc: "Время взглянуть на мир с другой стороны."}
+    ];
+
+    const container = document.getElementById('cardsContainer');
+
+    function getRandomCard() {
+        return deck[Math.floor(Math.random() * deck.length)];
+    }
+
+    function showCards(count) {
+        container.innerHTML = '';
+        for (let i = 0; i < count; i++) {
+            const card = getRandomCard();
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `<strong>${card.name}</strong><br>${card.desc}`;
+            container.appendChild(div);
+        }
+    }
+
+    document.getElementById('dayCardBtn').addEventListener('click', () => showCards(1));
+    document.getElementById('threeCardsBtn').addEventListener('click', () => showCards(3));
+    document.getElementById('fiveCardsBtn').addEventListener('click', () => showCards(5));
+</script>
+
 </body>
 </html>
