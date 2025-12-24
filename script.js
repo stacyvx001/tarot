@@ -93,9 +93,9 @@ window.cards = [
 // ================================
 
 // Получение одной случайной карты
-function getRandomCards(count) {
-    const shuffled = [...window.cards].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+function getRandomCard() {
+    const index = Math.floor(Math.random() * allCards.length);
+    return allCards[index];
 }
 
 // Получение нескольких случайных карт
@@ -174,5 +174,4 @@ for(let i = 0; i < 30; i++){
     star.innerText = Math.random() < 0.5 ? '★' : '🌙';
     magicBg.appendChild(star);
 }
-
 
