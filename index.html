@@ -5,65 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Гончарное Таро</title>
 <style>
+    /* Основной фон */
     body {
         margin: 0;
-        padding: 0;
+        padding: 50px 0 0 0;
         min-height: 100vh;
         font-family: sans-serif;
+        background: #e6e6fa;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 50px;
-        background: #e6e6fa;
-        position: relative;
-        overflow: hidden;
     }
 
-    /* Фоновый слой через ::before */
+    /* Мерцающие звёзды через CSS */
     body::before {
         content: "";
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #e6e6fa;
-        z-index: 0;
-    }
-
-    .star {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background:
+            radial-gradient(white 1px, transparent 1px) 10px 20px,
+            radial-gradient(white 1px, transparent 1px) 50px 80px,
+            radial-gradient(white 1px, transparent 1px) 200px 100px,
+            radial-gradient(white 1px, transparent 1px) 300px 150px,
+            radial-gradient(white 1px, transparent 1px) 400px 50px;
+        background-size: 50px 50px;
         animation: twinkle 2s infinite alternate;
-        z-index: 0;
+        pointer-events: none;
     }
 
     @keyframes twinkle {
-        0% { opacity: 0.2; transform: scale(1); }
-        100% { opacity: 1; transform: scale(1.5); }
-    }
-
-    .moon {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: #fff;
-        border-radius: 50%;
-        box-shadow: -8px 0 0 #e6e6fa;
-        opacity: 0.8;
-        animation: float 4s infinite alternate;
-        z-index: 0;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0) rotate(0deg); }
-        100% { transform: translateY(-10px) rotate(10deg); }
+        0% { opacity: 0.2; }
+        100% { opacity: 1; }
     }
 
     h1 {
-        z-index: 10;
-        position: relative;
+        margin-bottom: 30px;
     }
 
     button {
@@ -75,8 +52,6 @@
         border-radius: 5px;
         background-color: #d8bff7;
         color: #3a0ca3;
-        z-index: 10;
-        position: relative;
         transition: transform 0.2s, background-color 0.2s;
     }
 
@@ -91,8 +66,6 @@
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
-        z-index: 10;
-        position: relative;
     }
 
     .card {
@@ -104,8 +77,6 @@
         text-align: center;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
         font-size: 14px;
-        z-index: 10;
-        position: relative;
     }
 </style>
 </head>
@@ -120,30 +91,6 @@
 <div class="cards-container" id="cardsContainer"></div>
 
 <script>
-    // Создание звёзд и полумесяцев прямо в body
-    for (let i = 0; i < 50; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.top = Math.random() * window.innerHeight + 'px';
-        star.style.left = Math.random() * window.innerWidth + 'px';
-        const size = Math.random() * 3 + 1;
-        star.style.width = star.style.height = size + 'px';
-        star.style.animationDuration = 1 + Math.random() * 3 + 's';
-        document.body.appendChild(star);
-    }
-
-    for (let i = 0; i < 5; i++) {
-        const moon = document.createElement('div');
-        moon.classList.add('moon');
-        moon.style.top = Math.random() * window.innerHeight + 'px';
-        moon.style.left = Math.random() * window.innerWidth + 'px';
-        const scale = Math.random() * 1.5 + 0.5;
-        moon.style.width = moon.style.height = 20 * scale + 'px';
-        moon.style.boxShadow = `-${8 * scale}px 0 #e6e6fa`;
-        moon.style.animationDuration = 3 + Math.random() * 2 + 's';
-        document.body.appendChild(moon);
-    }
-
     const deck = [
         {name: "Шут", desc: "Сегодня забудь про правила, твори и улыбайся!"},
         {name: "Маг", desc: "Время проявить свои суперспособности."},
