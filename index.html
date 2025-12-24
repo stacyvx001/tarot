@@ -9,13 +9,15 @@
 <body>
     <div class="container">
         <h1>Гончарное Таро</h1>
-        <div class="buttons">
-            <button id="one-card">Карта дня</button>
-            <button id="three-cards">Расклад на 3 карты</button>
-            <button id="five-cards">Расклад на 5 карт</button>
+        <div class="button-container">
+            <button id="dailyCardBtn">Карта дня</button>
+            <button id="threeCardsBtn">Расклад на 3 карты</button>
+            <button id="fiveCardsBtn">Расклад на 5 карт</button>
         </div>
-        <div id="cards-container"></div>
+        <div id="cardsContainer" class="cards-container"></div>
+        <div id="cardInfo" class="card-info"></div>
     </div>
+    <canvas id="starCanvas" class="star-animation"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
