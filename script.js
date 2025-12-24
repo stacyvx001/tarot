@@ -65,7 +65,6 @@ window.cards = [
     { name: "King of Pentacles", image: "cards/pentacles/king_pentacles.jpeg", meanings: { general: "Материальный успех" } },
 
     // ===== Старшие арканы =====
-window.cardsMajor = [
     { name: "Fool", image: "cards/major/fool.jpeg", meanings: { general: "Начало пути, спонтанность" } },
     { name: "Magician", image: "cards/major/magician.jpeg", meanings: { general: "Ресурсы, мастерство" } },
     { name: "High Priestess", image: "cards/major/high_priestess.jpeg", meanings: { general: "Интуиция, тайны" } },
