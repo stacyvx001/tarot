@@ -191,3 +191,60 @@ window.spread = function(count) {
     const cardsArr = getRandomCards(count);
     showCards(cardsArr);
 }
+// ================================
+//  Выбор случайной карты
+// ================================
+function getRandomCard() {
+  const index = Math.floor(Math.random() * allCards.length);
+  return allCards[index];
+}
+
+function getRandomCards(count) {
+  const shuffled = [...allCards].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// ================================
+//  Показ карт
+// ================================
+function showCards(cards) {
+  const result = document.getElementById('result');
+  result.innerHTML = '';
+
+  cards.forEach(card => {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = card.image;
+    img.alt = card.name;
+
+    const text = document.createElement('div');
+    text.className = 'card-text';
+    text.innerHTML = `
+      <strong>${card.name}</strong><br>
+      ${card.comment}<br><br>
+      <em>Общее:</em> ${card.meanings.general}<br>
+      <em>Любовь:</em> ${card.meanings.love}<br>
+      <em>Работа:</em> ${card.meanings.work}<br>
+      <em>Да/Нет:</em> ${card.meanings.yesno}
+    `;
+
+    cardDiv.appendChild(img);
+    cardDiv.appendChild(text);
+    result.appendChild(cardDiv);
+  });
+}
+
+// ================================
+//  Кнопки
+// ================================
+document.getElementById('drawCardBtn').addEventListener('click', () => {
+  const card = getRandomCard();
+  showCards([card]);
+});
+
+document.getElementById('spreadThreeBtn').addEventListener('click', () => {
+  const cards = getRandomCards(3);
+  showCards(cards);
+});
