@@ -113,6 +113,16 @@ button:hover {
     line-height: 1.3;
 }
 
+.card-comment {
+  display: block;
+  margin-top: 5px;
+  font-style: italic;
+  color: #ff69b4; /* розовый для Женя/кубки */
+  background: rgba(255,255,255,0.2);
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
 /* Анимация падающих звёзд */
 .star {
     position: absolute;
