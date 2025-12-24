@@ -5,150 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Гончарное Таро</title>
 <style>
-    body {
-        margin: 0;
-        padding: 50px 0 0 0;
-        font-family: sans-serif;
-        background-color: #e6e6fa; /* лавандовый фон */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f3e8ff; /* нежный лавандовый фон */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 20px 0;
+}
 
-    h1 {
-        margin-bottom: 30px;
-    }
+h1 {
+    margin-bottom: 30px;
+    color: #5a189a;
+}
 
-    button {
-        padding: 10px 20px;
-        margin: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background-color: #d8bff7;
-        color: #3a0ca3;
-        transition: transform 0.2s, background-color 0.2s;
-    }
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #d8bff7;
+    color: #3a0ca3;
+    transition: transform 0.2s, background-color 0.2s;
+}
 
-    button:hover {
-        transform: scale(1.05);
-        background-color: #c49aff;
-    }
+button:hover {
+    transform: scale(1.05);
+    background-color: #c49aff;
+}
 
-    .cards-container {
-        margin-top: 30px;
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.cards-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-    .card {
-        width: 120px;
-        min-height: 180px;
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 10px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        font-size: 14px;
-    }
+.card {
+    width: 180px;
+    min-height: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    font-size: 13px;
+}
 
-    .card img {
-        width: 100px;
-        height: auto;
-        margin-bottom: 5px;
-    }
+.card img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.card p {
+    margin: 5px 0;
+}
 </style>
 </head>
 <body>
 
 <h1>Гончарное Таро</h1>
 
-<button onclick="showCards(1)">Карта дня</button>
-<button onclick="showCards(3)">Расклад на 3 карты</button>
-<button onclick="showCards(5)">Расклад на 5 карт</button>
-
-<div class="cards-container" id="cardsContainer">
-    <!-- Карты заранее прописаны, скрыты по умолчанию -->
-    <div class="card" data-name="Шут" data-desc="Сегодня забудь про правила, твори и улыбайся!" style="display:none;">
-        <img src="cards/shut.png" alt="Шут">
-        <strong>Шут</strong><br>
-        Сегодня забудь про правила, твори и улыбайся!
-    </div>
-    <div class="card" data-name="Маг" data-desc="Время проявить свои суперспособности." style="display:none;">
-        <img src="cards/mag.png" alt="Маг">
-        <strong>Маг</strong><br>
-        Время проявить свои суперспособности.
-    </div>
-    <div class="card" data-name="Верховная Жрица" data-desc="Слушай интуицию, она не подведёт." style="display:none;">
-        <img src="cards/high_priestess.png" alt="Верховная Жрица">
-        <strong>Верховная Жрица</strong><br>
-        Слушай интуицию, она не подведёт.
-    </div>
-    <div class="card" data-name="Императрица" data-desc="Создавай красоту вокруг себя." style="display:none;">
-        <img src="cards/empress.png" alt="Императрица">
-        <strong>Императрица</strong><br>
-        Создавай красоту вокруг себя.
-    </div>
-    <div class="card" data-name="Император" data-desc="Сегодня день для решительных действий." style="display:none;">
-        <img src="cards/emperor.png" alt="Император">
-        <strong>Император</strong><br>
-        Сегодня день для решительных действий.
-    </div>
-    <div class="card" data-name="Отшельник" data-desc="Найди минутку для себя и своих мыслей." style="display:none;">
-        <img src="cards/hermit.png" alt="Отшельник">
-        <strong>Отшельник</strong><br>
-        Найди минутку для себя и своих мыслей.
-    </div>
-    <div class="card" data-name="Колесо Фортуны" data-desc="Сюрпризы близко, держи улыбку!" style="display:none;">
-        <img src="cards/wheel_of_fortune.png" alt="Колесо Фортуны">
-        <strong>Колесо Фортуны</strong><br>
-        Сюрпризы близко, держи улыбку!
-    </div>
-    <div class="card" data-name="Сила" data-desc="Ты сильнее, чем думаешь." style="display:none;">
-        <img src="cards/strength.png" alt="Сила">
-        <strong>Сила</strong><br>
-        Ты сильнее, чем думаешь.
-    </div>
-    <div class="card" data-name="Справедливость" data-desc="Сегодня день баланса и честности." style="display:none;">
-        <img src="cards/justice.png" alt="Справедливость">
-        <strong>Справедливость</strong><br>
-        Сегодня день баланса и честности.
-    </div>
-    <div class="card" data-name="Повешенный" data-desc="Время взглянуть на мир с другой стороны." style="display:none;">
-        <img src="cards/hanged_man.png" alt="Повешенный">
-        <strong>Повешенный</strong><br>
-        Время взглянуть на мир с другой стороны.
-    </div>
+<div>
+    <button onclick="showCards(1)">Карта дня</button>
+    <button onclick="showCards(3)">Расклад на 3 карты</button>
+    <button onclick="showCards(5)">Расклад на 5 карт</button>
 </div>
 
+<div class="cards-container" id="cardsContainer"></div>
+
 <script>
-    const cards = Array.from(document.querySelectorAll('#cardsContainer .card'));
-
-    function getRandomCards(count) {
-        // создаем копию массива и перемешиваем
-        const copy = [...cards];
-        const selected = [];
-        while (selected.length < count && copy.length > 0) {
-            const idx = Math.floor(Math.random() * copy.length);
-            selected.push(copy.splice(idx,1)[0]);
-        }
-        return selected;
+// Колода карт
+const deck = [
+    {
+        name: "Шут",
+        img: "cards/shut.png",
+        base: "Новые начинания, спонтанность, приключения.",
+        career: "Начало нового проекта, рискованные идеи.",
+        love: "Новые знакомства, лёгкая флирт-ситуация.",
+        yesno: "Да, но с осторожностью."
+    },
+    {
+        name: "Маг",
+        img: "cards/mag.png",
+        base: "Реализация потенциала, энергия, уверенность.",
+        career: "Прояви свои навыки — успех обеспечен.",
+        love: "Инициатива в отношениях принесёт пользу.",
+        yesno: "Да, возможности благоприятны."
+    },
+    {
+        name: "Верховная Жрица",
+        img: "cards/high_priestess.png",
+        base: "Интуиция, тайны, внутренний мир.",
+        career: "Слушай интуицию, возможны скрытые возможности.",
+        love: "Секреты или недосказанность в отношениях.",
+        yesno: "Неопределённо, наблюдай."
+    },
+    {
+        name: "Императрица",
+        img: "cards/empress.png",
+        base: "Творчество, забота, изобилие.",
+        career: "Реализуй креативные идеи, будет поддержка.",
+        love: "Любовь, забота и гармония.",
+        yesno: "Да, благоприятный период."
+    },
+    {
+        name: "Император",
+        img: "cards/emperor.png",
+        base: "Структура, контроль, стабильность.",
+        career: "Прими ответственность, планируй стратегически.",
+        love: "Надёжность в отношениях, порядок.",
+        yesno: "Да, стабильность возможна."
+    },
+    {
+        name: "Отшельник",
+        img: "cards/hermit.png",
+        base: "Размышления, уединение, поиск знаний.",
+        career: "Время для анализа и подготовки.",
+        love: "Размышляй, прежде чем действовать.",
+        yesno: "Нет, пока не время."
+    },
+    {
+        name: "Колесо Фортуны",
+        img: "cards/wheel_of_fortune.png",
+        base: "Перемены, судьба, неожиданные события.",
+        career: "Будь готов к изменениям, возможно продвижение.",
+        love: "Сюрпризы в отношениях.",
+        yesno: "Да, шанс высок."
     }
+];
 
-    function showCards(count) {
-        // скрыть все карты
-        cards.forEach(c => c.style.display = 'none');
-        // показать выбранные
-        const selected = getRandomCards(count);
-        selected.forEach(c => c.style.display = 'block');
+// Советы девушек
+const girls = [
+    {name: "Женя", element: "Кубки", advice: "Следуй своим эмоциям, будь мягкой."},
+    {name: "Настя", element: "Пентакли", advice: "Думай о стабильности, сохраняй ресурсы."},
+    {name: "Маша", element: "Мечи", advice: "Будь решительной и ясной в мыслях."},
+    {name: "Дарина", element: "Жезлы", advice: "Проявляй инициативу и энтузиазм."},
+    {name: "Ника", element: "Старший Аркан", advice: "Смотри на картину целиком, не торопись."}
+];
+
+const container = document.getElementById('cardsContainer');
+
+function getRandomCards(count) {
+    const copy = [...deck];
+    const selected = [];
+    while (selected.length < count && copy.length > 0) {
+        const idx = Math.floor(Math.random() * copy.length);
+        selected.push(copy.splice(idx, 1)[0]);
     }
+    return selected;
+}
+
+function showCards(count) {
+    container.innerHTML = '';
+    const selected = getRandomCards(count);
+    selected.forEach(card => {
+        const girl = girls[Math.floor(Math.random() * girls.length)];
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+            <img src="${card.img}" alt="${card.name}">
+            <strong>${card.name}</strong>
+            <p><strong>Базовое значение:</strong> ${card.base}</p>
+            <p><strong>Карьера:</strong> ${card.career}</p>
+            <p><strong>Любовь:</strong> ${card.love}</p>
+            <p><strong>Да/Нет:</strong> ${card.yesno}</p>
+            <p><em>Совет от ${girl.name} (${girl.element}): ${girl.advice}</em></p>
+        `;
+        container.appendChild(div);
+    });
+}
 </script>
 
 </body>
 </html>
+
 
 
 
