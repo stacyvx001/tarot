@@ -60,13 +60,15 @@
 
 <h1>Гончарное Таро</h1>
 
-<button id="dayCardBtn">Карта дня</button>
-<button id="threeCardsBtn">Расклад на 3 карты</button>
-<button id="fiveCardsBtn">Расклад на 5 карт</button>
+<!-- Кнопки с inline onclick для надёжности -->
+<button onclick="showCards(1)">Карта дня</button>
+<button onclick="showCards(3)">Расклад на 3 карты</button>
+<button onclick="showCards(5)">Расклад на 5 карт</button>
 
 <div class="cards-container" id="cardsContainer"></div>
 
 <script>
+    // Колода с весёлыми описаниями
     const deck = [
         {name: "Шут", desc: "Сегодня забудь про правила, твори и улыбайся!"},
         {name: "Маг", desc: "Время проявить свои суперспособности."},
@@ -96,10 +98,6 @@
             container.appendChild(div);
         }
     }
-
-    document.getElementById('dayCardBtn').addEventListener('click', () => showCards(1));
-    document.getElementById('threeCardsBtn').addEventListener('click', () => showCards(3));
-    document.getElementById('fiveCardsBtn').addEventListener('click', () => showCards(5));
 </script>
 
 </body>
