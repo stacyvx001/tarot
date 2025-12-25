@@ -1,0 +1,34 @@
+from aiogram import Bot, Dispatcher, types
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
+from aiogram.utils import executor
+
+API_TOKEN = 'ВАШ_ТОКЕН_БОТА'  # вставь сюда токен твоего бота
+
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
+
+# Кнопка с Web App
+from aiogram import Bot, Dispatcher, types
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
+from aiogram.utils import executor
+
+API_TOKEN = 'ВАШ_ТОКЕН_БОТА'  # вставь сюда токен твоего бота
+
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
+
+# Кнопка с Web App
+web_app_button = KeyboardButton(
+    text="Открыть Tarot",
+    web_app=WebAppInfo(url="https://stacyvx001.github.io/tarot/")
+)
+keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+keyboard.add(web_app_button)
+
+@dp.message_handler(commands=['start'])
+async def send_welcome(message: types.Message):
+    await message.answer("Привет! Открой приложение для Таро:", reply_markup=keyboard)
+
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=True)
+
