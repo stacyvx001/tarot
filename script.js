@@ -142,4 +142,3 @@ function createStar(){
     setTimeout(()=> star.remove(),5000);
 }
 setInterval(createStar,300);
-}
