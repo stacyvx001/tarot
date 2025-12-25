@@ -33,7 +33,7 @@ const cards = [
     { name:"Queen of Pentacles", image:"cards/pentacles/queen_pentacles.jpeg", suit:"pentacles", meanings:{general:"Практичность и забота", love:"Поддержка партнера", work:"Управление ресурсами", yesno:"Да"}, advice:"Совет от Насти: проявляй заботу"},
     { name:"King of Pentacles", image:"cards/pentacles/king_pentacles.jpeg", suit:"pentacles", meanings:{general:"Материальная власть", love:"Ответственный партнер", work:"Лидерство и контроль", yesno:"Да"}, advice:"Совет от Насти: сохраняй стабильность"},
 
-// ===== Мечи (Маша) =====
+    // ===== Мечи (Маша) =====
 { name:"Ace of Swords", image:"cards/swords/ace_swords.jpeg", suit:"swords", meanings:{general:"Новый умственный старт", love:"Честность в чувствах", work:"Идея или проект", yesno:"Да"}, advice:"Совет от Маши: думай ясно"},
 { name:"Two of Swords", image:"cards/swords/two_swords.jpeg", suit:"swords", meanings:{general:"Выбор и нерешительность", love:"Неопределённость", work:"Неясность задач", yesno:"Нет"}, advice:"Совет от Маши: прислушайся к интуиции"},
 { name:"Three of Swords", image:"cards/swords/three_swords.jpeg", suit:"swords", meanings:{general:"Боль и разочарование", love:"Сердечная боль", work:"Неудача", yesno:"Нет"}, advice:"Совет от Маши: пережди и проанализируй"},
@@ -142,3 +142,5 @@ function createStar(){
     setTimeout(()=> star.remove(),5000);
 }
 setInterval(createStar,300);
+});
+
