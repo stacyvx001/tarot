@@ -143,4 +143,5 @@ function createStar(){
 }
 setInterval(createStar,300);
 });
+console.log("SCRIPT END OK");
 
